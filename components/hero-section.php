@@ -2,20 +2,20 @@
       <form action="search.html" method="post">
          <h3>find your perfect home</h3>
          <div class="box">
-            <p>enter location <span>*</span></p>
-            <input type="text" name="location" required maxlength="50" placeholder="enter ciyt name" class="input">
+            <p>Location <span class="clr-red">*</span></p>
+            <input type="text" name="location" required maxlength="50" placeholder="City Or Suborb Name Like Minto ..." class="input">
          </div>
          <div class="flex">
             <div class="box">
-               <p>property type <span>*</span></p>
+               <p>Property type <span class="clr-red">*</span></p>
                <select name="type" class="input" required>
-                  <option value="flat">flat</option>
-                  <option value="house">house</option>
-                  <option value="shop">shop</option>
+                  <option value="flat">Flat</option>
+                  <option value="house">House</option>
+                  <option value="shop">Shop</option>
                </select>
             </div>
             <div class="box">
-               <p>how many BHK <span>*</span></p>
+               <p>How many BHK <span class="clr-red">*</span></p>
                <select name="bhk" class="input" required>
                   <option value="1">1 BHK</option>
                   <option value="2">2 BHK</option>
@@ -29,7 +29,7 @@
                </select>
             </div>
             <div class="box">
-               <p>maximum budget <span>*</span></p>
+               <p>Maximum budget <span class="clr-red">*</span></p>
                <select name="minimum" class="input" required>
                   <option value="5000000">5 lac</option>
                   <option value="1000000">10 lac</option>
@@ -57,7 +57,7 @@
                </select>
             </div>
             <div class="box">
-               <p>maximum budget <span>*</span></p>
+               <p>Maximum budget <span class="clr-red">*</span></p>
                <select name="maximum" class="input" required>
                   <option value="5000000">5 lac</option>
                   <option value="1000000">10 lac</option>

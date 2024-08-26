@@ -10,6 +10,7 @@
    --black:#303030;
    --border:.1rem solid var(--light-color);
    --box-shodow:0 .5rem 1rem rgba(0,0,0,.1);
+   --red-clr:#ff1212;
 }
 
 *{
@@ -54,6 +55,10 @@ body{
    color:var(--main-color) !important;
 }
 
+.clr-red{
+   color: var(--red-clr) !important;
+}
+
 section{
    padding: 3rem 2rem;
    max-width: 1200px;
@@ -78,6 +83,8 @@ section{
    text-align: center;
    font-size: 1.8rem;
    text-transform: capitalize;
+   border-radius: 4px;
+   transition: 0.35s ease;
 }
 
 .btn:hover,
