@@ -1,7 +1,6 @@
-
 <?php 
 require '../config/init.php';
-include './components/head.php' ;
+include './components/head.php' 
 ?>
 
 <body>
@@ -10,7 +9,7 @@ include './components/head.php' ;
         <?php include './components/sidebar.php' ?>
         <main class="main">
             <div class="dashboard-container">
-                <?php include './components/dashboard.php' ?>
+                Properties
             </div>
         </main>
     </div>
