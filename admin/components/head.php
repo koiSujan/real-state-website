@@ -8,7 +8,7 @@
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../css/dashboard.css">
+  <!-- <link rel="stylesheet" href="../css/dashboard.css"> -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -42,12 +42,37 @@
       color: var(--black);
     }
 
+    button {
+      cursor: pointer;
+    }
+
     img {
       max-width: 100%;
     }
 
+    .flx {
+      display: flex;
+    }
+
+    .flx-ctr {
+      align-items: center;
+    }
+
+    .mg-x {
+      margin: 0 8px !important;
+    }
+
+    .mg-y-16 {
+      margin: 16px 0 !important;
+    }
+
+    .flx-between {
+      justify-content: space-between;
+    }
+
     .dashboard-wrap {
       display: flex;
+      height: 100%;
     }
 
     .sidebar {
@@ -56,6 +81,8 @@
       min-height: 100vh;
       height: 100%;
       padding: 20px;
+      position: fixed;
+      bottom: 0px;
     }
 
     .dash-header {
@@ -66,6 +93,7 @@
 
     .main {
       width: 100%;
+      margin-left: 20%;
     }
 
     .dashboard-container {
@@ -138,6 +166,173 @@
 
     .sidebar-links li a:hover {
       color: var(--main-color);
+    }
+
+    .theme-btn {
+      color: #fff;
+      background-color: var(--main-color);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 15px;
+      transition: 0.35s ease;
+      display: inline-block;
+    }
+
+    .theme-btn-alt {
+      background-color: #eee;
+      color: var(--black)
+    }
+
+    .theme-btn-alt:hover {
+      background-color: #dddada !important;
+    }
+
+    .theme-btn-submit {
+      min-width: 200px;
+    }
+
+    .theme-btn:hover {
+      background-color: #378aff;
+    }
+
+    .app-form {
+      max-width: 100%;
+    }
+
+    .app-form-label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .app-input {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      transition: 0.3s ease;
+    }
+
+    .app-form-group {
+      margin: 16px 0;
+    }
+
+    .app-content {
+      background-color: #fbfbfb;
+      padding: 12px 24px;
+      margin: 16px 0;
+      border-radius: 6px;
+    }
+
+    .app-input:focus {
+      border-color: var(--main-color);
+    }
+
+    @media screen and (min-width:900px) {
+      .app-form {
+        max-width: 60%;
+      }
+    }
+
+    .alert .inner {
+      display: block;
+      padding: 6px;
+      margin: 6px;
+      border-radius: 3px;
+      border: 1px solid rgb(180, 180, 180);
+      background-color: rgb(212, 212, 212);
+    }
+
+    .alert .close {
+      float: right;
+      margin: 3px 12px 0px 0px;
+      cursor: pointer;
+    }
+
+    .alert .inner,
+    .alert .close {
+      color: rgb(88, 88, 88);
+    }
+
+    .alert input {
+      display: none;
+    }
+
+    .alert input:checked~* {
+      animation-name: dismiss, hide;
+      animation-duration: 300ms;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-delay: 0s, 100ms;
+    }
+
+    .alert.error .inner {
+      border: 1px solid rgb(238, 211, 215);
+      background-color: rgb(242, 222, 222);
+    }
+
+    .alert.error .inner,
+    .alert.error .close {
+      color: rgb(185, 74, 72);
+    }
+
+    .alert.success .inner {
+      border: 1px solid rgb(214, 233, 198);
+      background-color: rgb(223, 240, 216);
+    }
+
+    .alert.success .inner,
+    .alert.success .close {
+      color: rgb(70, 136, 71);
+    }
+
+    .alert.info .inner {
+      border: 1px solid rgb(188, 232, 241);
+      background-color: rgb(217, 237, 247);
+    }
+
+    .alert.info .inner,
+    .alert.info .close {
+      color: rgb(58, 135, 173);
+    }
+
+    .alert.warning .inner {
+      border: 1px solid rgb(251, 238, 213);
+      background-color: rgb(252, 248, 227);
+    }
+
+    .alert.warning .inner,
+    .alert.warning .close {
+      color: rgb(192, 152, 83);
+    }
+
+    .d-none{
+      display: none;
+    }
+
+    @keyframes dismiss {
+      0% {
+        opacity: 1;
+      }
+
+      90%,
+      100% {
+        opacity: 0;
+        font-size: 0.1px;
+        transform: scale(0);
+      }
+    }
+
+    @keyframes hide {
+      100% {
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+      }
     }
   </style>
 </head>

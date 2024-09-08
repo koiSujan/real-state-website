@@ -1,5 +1,7 @@
 <?php
-  include "../config/constants.php";
+  require $_SERVER['DOCUMENT_ROOT'] . "/config/constants.php";  
+
+  // include "../config/constants.php";
   // establish connection with database locally
   $connection = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 

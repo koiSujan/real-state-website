@@ -16,3 +16,4 @@ include './components/head.php' ;
     </div>
 </body>
 </html>
+<?php include "./components/scripts.php" ?>
