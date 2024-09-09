@@ -5,75 +5,6 @@ include './components/head.php'
 
 <body>
   <?php include './components/header.php' ?>
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
-    try {
-      $title = $address = $price = $owner = $contact = $description = "";
-      // print_r($_POST);
-      $title = sanitizeInput($_POST["title"]);
-      $address = sanitizeInput($_POST["address"]);
-      $price = sanitizeInput($_POST["price"]);
-      $owner = sanitizeInput($_POST["owner"]);
-      $contact = sanitizeInput($_POST["contact"]);
-      $description = $_POST["description"];
-      $bedNo = sanitizeInput($_POST["bed"]);
-      $bathNo = sanitizeInput($_POST["bathroom"]);
-      $area = sanitizeInput($_POST["area"]);
-      $propertyType = sanitizeInput($_POST["type"]);
-
-      // insert query
-      $statement = $connection->prepare("Insert into properties(title, address, contact_person_number,owner, price, property_details ,listed_date, bed_no ,bath_no , area , property_type) values(? , ? , ? ,? ,? ,? ,? , ? ,? ,?,?)");
-      $statement->bind_param(
-        "sssssssssss",
-        $title,
-        $address,
-        $contact,
-        $owner,
-        $price,
-        $description,
-        date('Y-m-d'),
-        $bedNo,
-        $bathNo,
-        $area,
-        $propertyType
-      );
-
-      if ($statement->execute()) {
-        $rowId = $statement->insert_id;
-
-        // save files/images in properties_images table and uploads folder
-        $images = $_FILES['images'];
-        if (isset($images)) {
-          if (count($images['name']) > 0) {
-            for ($i = 0; $i < count($images['name']); $i++) {
-              $temp = array();
-              if ($images["error"][$i] == 0) {
-                $temp['name'] = $images['name'][$i];
-                $temp['type'] = $images['type'][$i];
-                $temp['tmp_name'] = $images['tmp_name'][$i];
-                $temp['error'] = $images['error'][$i];
-                $temp['size'] = $images['size'][$i];
-                $imageName = uploadFile($temp, "property");
-                if ($imageName) {
-                  $stmt = $connection->prepare("Insert into property_images(property_id, image_path) values(? , ?)");
-                  $stmt->bind_param("is", $rowId, $imageName);
-                  $stmt->execute();
-                }
-              }
-            }
-          }
-        }
-        redirect("./properties.php", 'success', 'Property Added Successfully');
-      } else {
-        redirect("./properties.php", 'error', 'Error occured in adding property. Failed to properly execute queries');
-      }
-    } catch (Exception $e) {
-      echo "Exception caught: " . $e->getMessage();
-    }
-  }
-  ?>
   <div class="dashboard-wrap">
     <?php include './components/sidebar.php' ?>
     <main class="main">
@@ -87,7 +18,7 @@ include './components/head.php'
             <form
               enctype="multipart/form-data"
               id="property-form"
-              action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+              action="core/properties.php"
               method="post"
               class="app-form">
               <div class="app-form-group">
@@ -157,12 +88,12 @@ include './components/head.php'
                 </div>
               </div>
               <div class="app-form-group">
-                <label for="p-price" class="app-form-label">Price</label>
-                <input name="price" type="text" id="p-price" class="app-input" placeholder="AUD 10.5M ... ">
+                <label for="p-cover_img" class="app-form-label">Cover Image</label>
+                <input type="file" accept="images/*" id="p-cover_img" class="app-input" name="cover_image">
               </div>
               <div class="app-form-group">
                 <label for="p-imgs" class="app-form-label">Images</label>
-                <input type="file" multiple accept="images/*" id="p-imgs" class="app-input" name="images[]" placeholder="AUD 10.5M ... ">
+                <input type="file" multiple accept="images/*" id="p-imgs" class="app-input" name="images[]">
               </div>
               <div class="app-form-group">
                 <label for="description" class="app-form-label">

@@ -311,25 +311,26 @@
       display: none;
     }
 
-    .p-detail .title{
+    .p-detail .title {
       font-weight: 600;
       font-size: 15.8px;
 
     }
 
-    .p-detail .addr,.dt{
+    .p-detail .addr,
+    .dt {
       font-size: 13px;
-      color:#666;
-      padding:8px 0;
+      color: #666;
+      padding: 8px 0;
     }
 
-    .p-contact p{
-      margin:8px 0;
+    .p-contact p {
+      margin: 8px 0;
     }
 
-    .table-action a{
+    .table-action a {
       display: inline-block;
-      padding:8px;
+      padding: 8px;
       width: 32px;
       height: 32px;
       background-color: #eee;
@@ -338,12 +339,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition:0.35s ease
+      transition: 0.35s ease
     }
 
-    .table-action a:hover{
+    .table-action a:hover {
       background-color: var(--main-color);
-      color:#fff;
+      color: #fff;
     }
 
     .app-table {
@@ -353,10 +354,11 @@
       /* border: 1px solid blue; */
     }
 
-    .app-table thead tr th{
-      border:1px solid transparent;
+    .app-table thead tr th {
+      border: 1px solid transparent;
       background-color: #e7eff9;
     }
+
     .app-table th,
     .app-table td {
       text-align: left;
