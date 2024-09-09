@@ -3,7 +3,7 @@
  
 ?>
 
-<aside class="sidebar d-none">
+<aside class="sidebar">
   <a href="./"><?php include "../components/logo.php" ?></a>
   <div class="sidebar-links">
     <ul>

@@ -135,7 +135,7 @@ include './components/head.php'
                     <select name="bed" id="p-bed" class="app-input" style="min-width:120px">
                       <?php
                       for ($x = 1; $x <= 10; $x++) {
-                        echo "<option value='.$x.'>" . $x . "</option>";
+                        echo "<option value='$x'>" . $x . "</option>";
                       }
                       ?>
                     </select>
@@ -145,7 +145,7 @@ include './components/head.php'
                     <select name="bathroom" id="p-bath" class="app-input" style="min-width:120px">
                       <?php
                       for ($x = 1; $x <= 10; $x++) {
-                        echo "<option value='.$x.'>" . $x . "</option>";
+                        echo "<option value='$x'>" . $x . "</option>";
                       }
                       ?>
                     </select>
