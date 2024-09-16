@@ -73,7 +73,7 @@ include './components/head.php'
                                                     </div>
                                                 </td>
                                                 <td>
-                                                <div class="p-detail-2">
+                                                    <div class="p-detail-2">
                                                         <p>Area: <?php echo $data['area'] ?></p>
                                                         <p>Bed: <?php echo $data['bed_no'] ?></p>
                                                         <p>Bathroom: <?php echo $data['bath_no'] ?></p>
@@ -81,8 +81,17 @@ include './components/head.php'
                                                 </td>
                                                 <td>
                                                     <div class="table-action">
-                                                        <a href="" title="View Detail"><i class="ri-eye-line"></i></a>
-                                                        <a href="" title="Delete Property"><i class="ri-delete-bin-line"></i></a>
+                                                        <a target="_blank" href="../property.php/?id=<?php echo $data['id'] ?>" title="View Detail"><i class="ri-eye-line"></i></a>
+                                                        <form id="del-prop-<?php echo $data['id'] ?>" method="post" action="core/delete-properties.php" style="display:inline">
+                                                            <input name="del_id" type="hidden" style="display:none" value="<?php echo $data['id'] ?>">
+                                                            <a href="#" onClick="
+                                                                if(window.confirm('Do you want to delete this item ?')){
+                                                                    console.log('yes');
+                                                                    document.querySelector('#del-prop-<?php echo $data['id'] ?>').submit();
+                                                                }
+                                                            " title="Delete Property"><i class="ri-delete-bin-line"></i></a>
+                                                        </form>
+                                                        <!-- <a href="" title="Delete Property"><i class="ri-delete-bin-line"></i></a> -->
                                                     </div>
                                                 </td>
                                             </tr>

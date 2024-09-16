@@ -44,28 +44,6 @@ require '../../config/init.php';
       if ($statement->execute()) {
         $rowId = $statement->insert_id;
         saveGalleryImages($rowId);
-        // save files/images in properties_images table and uploads folder
-        // $images = $_FILES['images'];
-        // if (isset($images)) {
-        //   if (count($images['name']) > 0) {
-        //     for ($i = 0; $i < count($images['name']); $i++) {
-        //       $temp = array();
-        //       if ($images["error"][$i] == 0) {
-        //         $temp['name'] = $images['name'][$i];
-        //         $temp['type'] = $images['type'][$i];
-        //         $temp['tmp_name'] = $images['tmp_name'][$i];
-        //         $temp['error'] = $images['error'][$i];
-        //         $temp['size'] = $images['size'][$i];
-        //         $imageName = uploadFile($temp, "property");
-        //         if ($imageName) {
-        //           $stmt = $connection->prepare("Insert into property_images(property_id, image_path) values(? , ?)");
-        //           $stmt->bind_param("is", $rowId, $imageName);
-        //           $stmt->execute();
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
         redirect("../properties.php", 'success', 'Property Added Successfully');
       } else {
         redirect("../properties.php", 'error', 'Error occured in adding property. Failed to properly execute queries');
