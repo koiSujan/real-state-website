@@ -899,9 +899,9 @@ section{
    color: var(--main-color);
 }
 
-.footer .flex .box:last-child{
+/* .footer .flex .box:last-child{
    text-align: right;
-}
+} */
 
 .footer .flex .box:last-child a i{
    margin-left: 1.5rem;
@@ -911,9 +911,9 @@ section{
    margin-right: 1.5rem;
 }
 
-.footer .flex .box:nth-child(2){
+/* .footer .flex .box:nth-child(2){
    text-align: center;
-}
+} */
 
 .footer .credit{
    padding: 3rem 2rem;

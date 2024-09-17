@@ -3,18 +3,17 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>123456789</span></a>
-         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>1112223333</span></a>
-         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>shaikhanas@gmail.com</span></a>
-         <a href="#"><i class="fas fa-map-marker-alt"></i><span>mumbai, india - 400104</span></a>
+         <a href="tel:0425896478"><i class="fas fa-phone"></i><span>0425 896 478</span></a>
+         <a href="tel:0428745279"><i class="fas fa-phone"></i><span>0428 745 279</span></a>
+         <a href="mailto:primeproperties@gmail.com"><i class="fas fa-envelope"></i><span>primeproperties@gmail.com</span></a>
+         <a href="#"><i class="fas fa-map-marker-alt"></i><span>3 Railway Pde, Burwood , Level 1</span></a>
       </div>
 
       <div class="box">
-         <a href="home.html"><span>home</span></a>
-         <a href="about.html"><span>about</span></a>
-         <a href="contact.html"><span>contact</span></a>
-         <a href="listings.html"><span>all listings</span></a>
-         <a href="#"><span>saved properties</span></a>
+         <a href="../index.php"><span>Home</span></a>
+         <a href="../about.php"><span>About</span></a>
+         <a href="../contact.php"><span>Contact</span></a>
+         <a href="../properties.php"><span>All listings</span></a>
       </div>
 
       <div class="box">
@@ -27,6 +26,6 @@
 
    </section>
 
-   <div class="credit">&copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!</div>
+   <div class="credit">&copy; copyright @ 2022 by <span>Prime Properties Realtors</span> | All rights reserved!</div>
 
 </footer>
