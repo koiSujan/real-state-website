@@ -78,3 +78,26 @@ function uploadFile($file, $upload_dir){
 }
 
 
+function debug($variable , $isDie= true){
+	print_r($variable);
+	if($isDie){
+		die();
+	}
+}
+
+function isAuth(){
+	if(isset($_SESSION['auth_user'])){
+		return true;
+	}
+
+	redirect('../login.php');
+}
+
+function isAdmin(){
+	if(isset($_SESSION['auth_role']) && $_SESSION['auth_role'] == 'admin'){
+		return true;
+	}
+
+	redirect('../index.php');
+}
+

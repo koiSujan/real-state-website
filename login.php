@@ -16,7 +16,7 @@ if (isset($_SESSION['auth_user'])) {
    <!-- home section starts  -->
    <?php flash() ?>
    <section class="form-container">
-      <form action="core/login.php" method="post" enctype="multipart/form-data">
+      <form action="./core/login.php" method="post" enctype="multipart/form-data">
          <h3>Welcome. Let's Get Started</h3>
          <input type="email" name="email" required placeholder="Enter your email" class="box">
          <input type="password" name="password" required maxlength="20" placeholder="Enter your password" class="box">

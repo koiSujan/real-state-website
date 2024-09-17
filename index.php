@@ -3,7 +3,7 @@ require 'config/init.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'components/head.php' ?>
+<?php include './components/head.php' ?>
 
 <body>
 
@@ -48,3 +48,6 @@ require 'config/init.php';
 </body>
 
 </html>
+
+<?php include './components/script.php' ?>
+<script src="./js/script.js"></script>
