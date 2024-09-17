@@ -16,9 +16,9 @@ if (isset($_SESSION['auth_user'])) {
    <!-- home section starts  -->
    <?php flash() ?>
    <section class="form-container">
-      <form action="./core/login.php" method="post" enctype="multipart/form-data">
+      <form id="login-form" action="./core/login.php" method="post" enctype="multipart/form-data">
          <h3>Welcome. Let's Get Started</h3>
-         <input type="email" name="email" required placeholder="Enter your email" class="box">
+         <input type="email" name="email" placeholder="Enter your email" class="box">
          <input type="password" name="password" required maxlength="20" placeholder="Enter your password" class="box">
          <p>Do not have an account? <a href="./register.php">Register Now</a></p>
          <input type="submit" value="LOGIN" name="submit" class="btn">
@@ -38,3 +38,35 @@ if (isset($_SESSION['auth_user'])) {
 </html>
 <?php include './components/script.php' ?>
 <script src="./js/script.js"></script>
+<script>
+   $("#login-form").validate({
+      // Specify validation rules
+      rules: {
+
+         email: {
+            "required": true,
+            "email": true
+         },
+         password: {
+            "required": true,
+            "minlength": 6
+         },
+
+
+      },
+      // Specify validation error messages
+      messages: {
+
+         email: {
+            required: "Please provide email",
+            email: "Email must be valid "
+         },
+         password: "Please provide your password",
+      },
+      // Make sure the form is submitted to the destination defined
+      // in the "action" attribute of the form when valid
+      submitHandler: function(form) {
+         form.submit();
+      }
+   });
+</script>

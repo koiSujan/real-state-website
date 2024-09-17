@@ -94,6 +94,10 @@ function isAuth(){
 }
 
 function isAdmin(){
+	if(!isset($_SESSION['auth_user'])){
+		redirect('../index.php');
+	}
+	
 	if(isset($_SESSION['auth_role']) && $_SESSION['auth_role'] == 'admin'){
 		return true;
 	}

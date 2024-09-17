@@ -388,5 +388,23 @@
         border: 0px;
       }
     }
+
+    .account-menu {
+      display: none;
+      position: relative;
+    }
+
+    .account-menu.active {
+      display: block;
+    }
+
+    .account-inner-menu {
+      background-color: #fff;
+      padding: 10px;
+      position: absolute !important;
+      top: 5px !important;
+      right: 0px !important;
+      border-radius: 6px;
+    }
   </style>
 </head>

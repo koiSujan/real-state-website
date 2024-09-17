@@ -1,6 +1,7 @@
 
 <?php 
 require '../config/init.php';
+isAdmin();
 include './components/head.php' ;
 ?>
 
