@@ -51,6 +51,16 @@
       max-width: 100%;
     }
 
+    .clr-theme{
+      color:var(--main-color)
+    }
+
+    .clr-theme#account-btn{
+      background:#daedf3;
+      padding:8px 16px;
+      border-radius: 30px;
+    }
+
     .flx {
       display: flex;
     }

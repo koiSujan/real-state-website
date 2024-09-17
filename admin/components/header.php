@@ -1,10 +1,10 @@
 <header class="dash-header">
     <a href="./" style="visibility:hidden"><?php include "../components/logo.php" ?></a>
     <div>
-        <a href="#" id="account-btn">
+        <a href="#" id="account-btn" class="clr-theme">
             <?php
             if (isset($_SESSION['auth_user'])) {
-                echo "Welcome ! " . $_SESSION['auth_user'];
+                echo "Welcome ! " . $_SESSION['auth_user'] . '<i class="ri-arrow-down-s-line"></i>';
             } else {
                 echo "Account";
             }
