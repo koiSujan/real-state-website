@@ -13,29 +13,11 @@ require 'config/init.php';
 
    <!-- home section starts  -->
 
-   <div class="home">
-      <?php include './components/hero-section.php' ?>
-   </div>
+   <!-- <div class="home"> -->
+      <?php include './components/about.php' ?>
+   <!-- </div> -->
 
    <!-- home section ends -->
-
-   <!-- services section starts  -->
-   <?php include './components/services.php' ?>
-
-   <!-- services section ends -->
-
-   <!-- listings section starts  -->
-   <?php include './components/property-listing.php' ?>
-   <!-- listings section ends -->
-
-
-
-
-
-
-
-
-
 
    <!-- footer section starts  -->
    <?php include './components/footer.php' ?>

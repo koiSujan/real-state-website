@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $email
     );
     $result = $statement->execute();
-    if(!$result){
-      redirect('../login.php', "error" , "Server error");
+    if (!$result) {
+      redirect('../login.php', "error", "Server error");
     }
     $data = $statement->get_result();
     $row = $data->fetch_assoc();
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($row)) {
       // debug($row['password']);
       if (password_verify($password, $row['password'])) {
-        
+        $_SESSION['auth_id'] = $row['id'];
         $_SESSION['auth_user'] = $row['name'];
         if ($row['role'] == 'admin') {
           $_SESSION['auth_role'] = 'admin';

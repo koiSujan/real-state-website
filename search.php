@@ -6,26 +6,16 @@ require 'config/init.php';
 <?php include './components/head.php' ?>
 
 <body>
-   <?php flash() ?>
+
    <!-- header section starts  -->
    <?php include './components/header.php' ?>
    <!-- header section ends -->
 
-   <!-- home section starts  -->
-
-   <div class="home">
-      <?php include './components/hero-section.php' ?>
-   </div>
-
-   <!-- home section ends -->
-
-   <!-- services section starts  -->
-   <?php include './components/services.php' ?>
 
    <!-- services section ends -->
 
    <!-- listings section starts  -->
-   <?php include './components/property-listing.php' ?>
+   <?php include './components/search-properties.php' ?>
    <!-- listings section ends -->
 
 

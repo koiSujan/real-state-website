@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 require 'config/init.php';
-isAuth();
+// isAuth();
 ?>
 <?php include 'components/head.php' ?>
 <?php
@@ -63,8 +63,8 @@ if ($statement2->execute()) {
             <?php
             foreach ($galleryImages as $key => $data) {
             ?>
-            <!-- <?php echo UPLOAD_URL.'property/'.$data['image_path'] ?> -->
-              <img src="<?php echo UPLOAD_URL.'property/'.$data['image_path'] ?>" alt="PROPERTY_GALLERY_IMAGE">
+              <!-- <?php echo UPLOAD_URL . 'property/' . $data['image_path'] ?> -->
+              <img src="<?php echo UPLOAD_URL . 'property/' . $data['image_path'] ?>" alt="PROPERTY_GALLERY_IMAGE">
             <?php
             }
             ?>
@@ -116,9 +116,19 @@ if ($statement2->execute()) {
         <p class="description">
           <?php echo $row['property_details'] ?>
         </p>
-        <form action="" method="post">
+        <?php
+        if (isset($_SESSION['auth_id']))
+        ?>
+        <form action="./core/book_appointment.php" method="post">
+          <div class="app-form-group">
+            <input type="date" required class="app-input" name="date" min="<?php echo date('Y-m-d') ?>" placeholder="Choose a Date">
+            <!-- <input type="text" class="hidden" name="user_id" value="<?php echo $_SESSION['auth_id'] || '0' ?>"> -->
+            <input type="hidden" class="hidden" name="property_id" value="<?php echo $pId ?>">
+          </div>
           <input type="submit" value="Book A Visit Here" name="save" class="inline-btn">
         </form>
+        <?php
+        ?>
       </div>
 
   </section>
@@ -128,6 +138,7 @@ if ($statement2->execute()) {
   <!-- footer section ends -->
 
 </body>
+
 </html>
 
 <?php include './components/script.php' ?>
