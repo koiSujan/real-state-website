@@ -8,6 +8,8 @@
 </script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
 </script>
+
+<script src="https://cdn.datatables.net/2.1.6/js/dataTables.min.js"></script>
 <script type="text/javascript">
   const accountBtn = document.getElementById("account-btn");
 

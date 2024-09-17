@@ -29,7 +29,7 @@ include './components/head.php'
             // debug($rows);
             ?>
             <div style="overflow-x:auto;">
-              <table class="app-table">
+              <table class="app-table" id="booking-table">
                 <thead>
                   <tr>
                     <th>Booking Id</th>
@@ -87,3 +87,11 @@ include './components/head.php'
 </body>
 
 </html>
+
+<?php include './components/scripts.php' ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#booking-table').DataTable();
+    });
+</script>

@@ -27,7 +27,7 @@ include './components/head.php'
                         }
                         ?>
                         <div style="overflow-x:auto;">
-                            <table class="app-table">
+                            <table class="app-table" id="contact-table">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -95,3 +95,11 @@ include './components/head.php'
 </body>
 
 </html>
+
+<?php include './components/scripts.php' ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#contact-table').DataTable();
+    });
+</script>
