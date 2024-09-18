@@ -1,6 +1,12 @@
 <?php
 require '../../config/init.php';
-
+  // This Script
+  // POST Request handle
+  // handle exceptions
+  // upload image
+  // upload cover images
+  // save data fields to database
+  // redirect
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
       $title = $address = $price = $owner = $contact = $description = $coverImage = "";

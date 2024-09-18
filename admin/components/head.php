@@ -417,5 +417,10 @@
       right: 0px !important;
       border-radius: 6px;
     }
+
+    .error{
+      color:red;
+      font-size: 12px;
+    }
   </style>
 </head>
