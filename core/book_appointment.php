@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   try {
     $propertyId = (int)$_POST["property_id"];
     $bookedBy = (int)$_SESSION['auth_id'];
-    $bookingDate = date('Y-m-d' , $_POST["date"]);
+    $bookingDate = date('Y-m-d' , strtotime($_POST["date"]));
     $statement = $connection->prepare("Insert into bookings(booked_by, property_id , booking_date) values(? ,? ,?)");
     $statement->bind_param(
       "iis",

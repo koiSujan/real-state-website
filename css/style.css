@@ -1055,6 +1055,8 @@ section{
    border-radius: 3px;
    border: 1px solid rgb(180, 180, 180);
    background-color: rgb(212, 212, 212);
+   font-weight: 700;
+   font-size:18px;
  }
 
  .alert .close {
